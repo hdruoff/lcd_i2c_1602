@@ -1,8 +1,8 @@
-I2C_LCD1602.LcdInit(0)
-I2C_LCD1602.on()
-I2C_LCD1602.BacklightOn()
-I2C_LCD1602.clear()
+let item = 0
+I2C_LCD1602.LcdInit(39)
+I2C_LCD1602.ShowString("Hello who I am", 0, 0)
 basic.forever(function () {
-    I2C_LCD1602.ShowString("Hello who I am", 0, 0)
-    I2C_LCD1602.ShowNumber(12345678910111212, 0, 1)
+    item += 1
+    I2C_LCD1602.ShowNumber(item, 0, 1)
+    basic.pause(1000)
 })
